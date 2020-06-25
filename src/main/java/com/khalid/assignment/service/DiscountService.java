@@ -43,7 +43,8 @@ public class DiscountService {
         }
         if(userDto.getRole().equalsIgnoreCase(AFFILIATE_ROLE)){
             amountAfterDiscount = calculate(amount, AFFILIATE_PERCENTAGE, amountAfterDiscount);
-        }if(userDto.getCreatedAt().isBefore(ZonedDateTime.now().minusYears(2).toInstant())){
+        }
+        if(userDto.getCreatedAt().isBefore(ZonedDateTime.now().minusYears(2).toInstant())){
             amountAfterDiscount = calculate(amount, TWO_YEARS_PERCENTAGE, amountAfterDiscount);
         }
 
